@@ -1,0 +1,818 @@
+21:25:59>> aliases
+[21:25:59] ID: 331 'aliases' started [target: z0.0.0.1]
+acquiretoken         : LOCAL            : script _AcquireToken.dss %%cmd_args%%
+acquiretoken         : ANY_REMOTE       : script _AcquireToken.dss %%cmd_args%%
+arparp               : LOCAL            : python windows/arparp.py -args " %%cmd_args%% " -project Ops
+arparp               : ANY_REMOTE       : python windows/arparp.py -args " %%cmd_args%% " -project Ops
+channels             : LOCAL            : commands %%cmd_args%%
+channels             : ANY_REMOTE       : commands %%cmd_args%%
+checkpsp             : LOCAL            : python windows/checkpsp.py -args " %%cmd_args%% " -project Ops
+checkpsp             : ANY_REMOTE       : python windows/checkpsp.py -args " %%cmd_args%% " -project Ops
+checksum             : LOCAL            : script windows/checksum.dss -args " %%cmd_args%% " -project Ops
+checksum             : ANY_REMOTE       : script windows/checksum.dss -args " %%cmd_args%% " -project Ops
+commands             : LOCAL            : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+commands             : ANY_REMOTE       : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+copyegg              : LOCAL            : python lib\sendfile.py -args " --destdir imps  %%cmd_args%% " -project Ops
+copyegg              : ANY_REMOTE       : python lib\sendfile.py -args " --destdir imps  %%cmd_args%% " -project Ops
+copyfast             : LOCAL            : python lib\sendfile.py -args " --destdir fast  %%cmd_args%% " -project Ops
+copyfast             : ANY_REMOTE       : python lib\sendfile.py -args " --destdir fast  %%cmd_args%% " -project Ops
+copyget              : LOCAL            : script windows/copyget.dss -args " %%cmd_args%% " -project Ops
+  Options: temppath tempfile 
+copyget              : ANY_REMOTE       : script windows/copyget.dss -args " %%cmd_args%% " -project Ops
+  Options: temppath tempfile 
+copypc               : LOCAL            : python copypc.py -args " %%cmd_args%% " -project Ops
+copypc               : ANY_REMOTE       : python copypc.py -args " %%cmd_args%% " -project Ops
+copyslow             : LOCAL            : python lib\sendfile.py -args " --destdir slow  %%cmd_args%% " -project Ops
+copyslow             : ANY_REMOTE       : python lib\sendfile.py -args " --destdir slow  %%cmd_args%% " -project Ops
+cp                   : LOCAL            : copy %%cmd_args%%
+cp                   : ANY_REMOTE       : copy %%cmd_args%%
+darkpulsar           : LOCAL            : python dapu.py -project DaPu -args "  %%cmd_args%%  "
+darkpulsar           : ANY_REMOTE       : python dapu.py -project DaPu -args "  %%cmd_args%%  "
+darkskyline          : LOCAL            : python _DarkSkyline.pyo -args " %%cmd_args%% "
+  Options: method 
+darkskyline          : ANY_REMOTE       : python _DarkSkyline.pyo -args " %%cmd_args%% "
+  Options: method 
+debug                : LOCAL            : lpsetenv -name _DEBUG -value %%cmd_args%%
+debug                : ANY_REMOTE       : lpsetenv -name _DEBUG -value %%cmd_args%%
+debugload            : LOCAL            : lpsetenv -name _DEBUGLOAD -value %%cmd_args%%
+debugload            : ANY_REMOTE       : lpsetenv -name _DEBUGLOAD -value %%cmd_args%%
+del                  : LOCAL            : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+del                  : ANY_REMOTE       : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+diffhour             : LOCAL            : python diffhour.py -args " %%cmd_args%% " -project Ops
+  Options: mask path age recursive restart safe sysdrive nodiff noquiet fromtime centeredtime 
+diffhour             : ANY_REMOTE       : python diffhour.py -args " %%cmd_args%% " -project Ops
+  Options: mask path age recursive restart safe sysdrive nodiff noquiet fromtime centeredtime 
+dirget               : LOCAL            : script windows/dirget.dss -args " %%cmd_args%% " -project Ops
+dirget               : ANY_REMOTE       : script windows/dirget.dss -args " %%cmd_args%% " -project Ops
+disable              : LOCAL            : script HelperScripts/_DisableCommand.dss -args " %%cmd_args%% "
+disable              : ANY_REMOTE       : script HelperScripts/_DisableCommand.dss -args " %%cmd_args%% "
+disableauditing      : ANY_REMOTE       : python Lib/ops/survey/auditing.py -project Ops -args " %%cmd_args%% "
+dmgz_install         : LOCAL            : python _DmGz.py -args "-action INSTALL  -driver  %%cmd_args%% "
+dmgz_install         : ANY_REMOTE       : python _DmGz.py -args "-action INSTALL  -driver  %%cmd_args%% "
+dmgz_load            : LOCAL            : python _DmGz.py -args "-action LOAD  -driver  %%cmd_args%% "
+dmgz_load            : ANY_REMOTE       : python _DmGz.py -args "-action LOAD  -driver  %%cmd_args%% "
+dmgz_status          : LOCAL            : python _DmGz.py -args "-action STATUS -driver  %%cmd_args%% "
+dmgz_status          : ANY_REMOTE       : python _DmGz.py -args "-action STATUS -driver  %%cmd_args%% "
+dmgz_uninstall       : LOCAL            : python _DmGz.py -args "-action UNINSTALL  -driver  %%cmd_args%% "
+dmgz_uninstall       : ANY_REMOTE       : python _DmGz.py -args "-action UNINSTALL  -driver  %%cmd_args%% "
+dmgz_unload          : LOCAL            : python _DmGz.py -args "-action UNLOAD  -driver  %%cmd_args%% "
+dmgz_unload          : ANY_REMOTE       : python _DmGz.py -args "-action UNLOAD  -driver  %%cmd_args%% "
+dmgz_verifyinstall   : LOCAL            : python _DmGz.py -args "-action VERIFYINSTALL  -driver  %%cmd_args%% "
+dmgz_verifyinstall   : ANY_REMOTE       : python _DmGz.py -args "-action VERIFYINSTALL  -driver  %%cmd_args%% "
+dmgz_verifyrunning   : LOCAL            : python _DmGz.py -args "-action VERIFYRUNNING  -driver  %%cmd_args%% "
+dmgz_verifyrunning   : ANY_REMOTE       : python _DmGz.py -args "-action VERIFYRUNNING  -driver  %%cmd_args%% "
+doormangauze         : LOCAL            : python _DmGz.py -args " %%cmd_args%% "
+doormangauze         : ANY_REMOTE       : python _DmGz.py -args " %%cmd_args%% "
+doublefeature        : ANY_REMOTE       : log=DoubleFeature_ python doublefeature.py -project Df -args " %%cmd_args%% "
+driverlist           : LOCAL            : python Lib/ops/survey/driverlist.py -project Ops -args " %%cmd_args%% "
+driverlist           : ANY_REMOTE       : python Lib/ops/survey/driverlist.py -project Ops -args " %%cmd_args%% "
+dsky_deletecapture   : LOCAL            : python _DarkSkyline.pyo -args "-action DELETECAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_deletecapture   : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action DELETECAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_getcapture      : LOCAL            : python _DarkSkyline.pyo -args "-action GETCAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_getcapture      : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action GETCAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_getfilter       : LOCAL            : python _DarkSkyline.pyo -args "-action GETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_getfilter       : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action GETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_install         : LOCAL            : python _DarkSkyline.pyo -args "-action INSTALL  %%cmd_args%% "
+  Options: name 
+dsky_install         : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action INSTALL  %%cmd_args%% "
+  Options: name 
+dsky_load            : LOCAL            : python _DarkSkyline.pyo -args "-action LOAD  %%cmd_args%% "
+  Options: name 
+dsky_load            : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action LOAD  %%cmd_args%% "
+  Options: name 
+dsky_setfilter       : LOCAL            : python _DarkSkyline.pyo -args "-action SETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_setfilter       : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action SETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_setkey          : LOCAL            : python _DarkSkyline.pyo -args "-action SETKEY  %%cmd_args%% "
+  Options: name 
+dsky_setkey          : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action SETKEY  %%cmd_args%% "
+  Options: name 
+dsky_setmaxsize      : LOCAL            : python _DarkSkyline.pyo -args "-action SETMAXSIZE  %%cmd_args%% "
+  Options: name 
+dsky_setmaxsize      : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action SETMAXSIZE  %%cmd_args%% "
+  Options: name 
+dsky_start           : LOCAL            : python _DarkSkyline.pyo -args "-action START  %%cmd_args%% "
+  Options: name 
+dsky_start           : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action START  %%cmd_args%% "
+  Options: name 
+dsky_status          : LOCAL            : python _DarkSkyline.pyo -args "-action STATUS  %%cmd_args%% "
+  Options: name 
+dsky_status          : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action STATUS  %%cmd_args%% "
+  Options: name 
+dsky_stop            : LOCAL            : python _DarkSkyline.pyo -args "-action STOP  %%cmd_args%% "
+  Options: name 
+dsky_stop            : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action STOP  %%cmd_args%% "
+  Options: name 
+dsky_uninstall       : LOCAL            : python _DarkSkyline.pyo -args "-action UNINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_uninstall       : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action UNINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_unload          : LOCAL            : python _DarkSkyline.pyo -args "-action UNLOAD  %%cmd_args%% "
+  Options: name 
+dsky_unload          : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action UNLOAD  %%cmd_args%% "
+  Options: name 
+dsky_verifyinstall   : LOCAL            : python _DarkSkyline.pyo -args "-action VERIFYINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_verifyinstall   : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action VERIFYINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_verifyrunning   : LOCAL            : python _DarkSkyline.pyo -args "-action VERIFYRUNNING  %%cmd_args%% "
+  Options: name 
+dsky_verifyrunning   : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action VERIFYRUNNING  %%cmd_args%% "
+  Options: name 
+emkg_plist           : LOCAL            : python windows/remoteprocesslist.py -args "--wmi --target  %%cmd_args%% "
+emkg_plist           : ANY_REMOTE       : python windows/remoteprocesslist.py -args "--wmi --target  %%cmd_args%% "
+eventlogclean        : LOCAL            : script windows/eventlogclean.dss -args " %%cmd_args%% " -project Ops
+eventlogclean        : ANY_REMOTE       : script windows/eventlogclean.dss -args " %%cmd_args%% " -project Ops
+eventlogmonitor      : LOCAL            : python windows\eventlogs.py -args " -m  %%cmd_args%% " -project Ops
+eventlogmonitor      : ANY_REMOTE       : python windows\eventlogs.py -args " -m  %%cmd_args%% " -project Ops
+eventlogsearch       : LOCAL            : python eventlogsearch.py -args " %%cmd_args%% " -project Ops
+  Options: num id log sid string startrecord xpath max target summary logons monitor interval 
+eventlogsearch       : ANY_REMOTE       : python eventlogsearch.py -args " %%cmd_args%% " -project Ops
+  Options: num id log sid string startrecord xpath max target summary logons monitor interval 
+eventlogsurvey       : LOCAL            : python windows\eventlogs.py -args "  %%cmd_args%% " -project Ops
+eventlogsurvey       : ANY_REMOTE       : python windows\eventlogs.py -args "  %%cmd_args%% " -project Ops
+exploit              : LOCAL            : script _LegacyExploit.dss -args " %%cmd_args%% "
+exploit              : ANY_REMOTE       : script _LegacyExploit.dss -args " %%cmd_args%% "
+flav_install         : LOCAL            : python _FlAv.py -args "-action INSTALL  %%cmd_args%% "
+flav_install         : ANY_REMOTE       : python _FlAv.py -args "-action INSTALL  %%cmd_args%% "
+flav_load            : LOCAL            : python _FlAv.py -args "-action LOAD  %%cmd_args%% "
+flav_load            : ANY_REMOTE       : python _FlAv.py -args "-action LOAD  %%cmd_args%% "
+flav_plugins         : LOCAL            : python flavplugincontrol.py -args " %%cmd_args%% " -project Ops
+  Options: enable disable status 
+flav_plugins         : ANY_REMOTE       : python flavplugincontrol.py -args " %%cmd_args%% " -project Ops
+  Options: enable disable status 
+flav_status          : LOCAL            : python _FlAv.py -args "-action STATUS  %%cmd_args%% "
+flav_status          : ANY_REMOTE       : python _FlAv.py -args "-action STATUS  %%cmd_args%% "
+flav_uninstall       : LOCAL            : python _FlAv.py -args "-action UNINSTALL  %%cmd_args%% "
+flav_uninstall       : ANY_REMOTE       : python _FlAv.py -args "-action UNINSTALL  %%cmd_args%% "
+flav_upgrade         : LOCAL            : python _FlAv.py -args "-action UPGRADE  %%cmd_args%% "
+flav_upgrade         : ANY_REMOTE       : python _FlAv.py -args "-action UPGRADE  %%cmd_args%% "
+flav_verifyinstall   : LOCAL            : python _FlAv.py -args "-action VERIFYINSTALL  %%cmd_args%% "
+flav_verifyinstall   : ANY_REMOTE       : python _FlAv.py -args "-action VERIFYINSTALL  %%cmd_args%% "
+flav_verifyrunning   : LOCAL            : python _FlAv.py -args "-action VERIFYRUNNING  %%cmd_args%% "
+flav_verifyrunning   : ANY_REMOTE       : python _FlAv.py -args "-action VERIFYRUNNING  %%cmd_args%% "
+flewavenue           : LOCAL            : python _FlAv.py %%cmd_args%% "
+flewavenue           : ANY_REMOTE       : python _FlAv.py %%cmd_args%% "
+forcelogon           : LOCAL            : script _ForceLogon.dss -args " %%cmd_args%% "
+  Options: user 
+forcelogon           : ANY_REMOTE       : script _ForceLogon.dss -args " %%cmd_args%% "
+  Options: user 
+free                 : LOCAL            : freeplugin %%cmd_args%%
+free                 : ANY_REMOTE       : freeplugin %%cmd_args%%
+freshscan            : LOCAL            : python windows\freshscan.py -args " %%cmd_args%% " -project Ops
+freshscan            : ANY_REMOTE       : python windows\freshscan.py -args " %%cmd_args%% " -project Ops
+goodget              : LOCAL            : script windows/goodget.dss -args " %%cmd_args%% " -project Ops
+goodget              : ANY_REMOTE       : script windows/goodget.dss -args " %%cmd_args%% " -project Ops
+history              : LOCAL            : python History/_UserAssist.pyo -args " %%cmd_args%% " -project Dsz
+  Options: type user verbose 
+history              : ANY_REMOTE       : python History/_UserAssist.pyo -args " %%cmd_args%% " -project Dsz
+  Options: type user verbose 
+hittun               : LOCAL            : python windows\randdirect.py -args "hittun  %%cmd_args%% " -project Ops
+hittun               : ANY_REMOTE       : python windows\randdirect.py -args "hittun  %%cmd_args%% " -project Ops
+hour                 : LOCAL            : python diffhour.py -args "-nodiff -recursive -age 1h  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+hour                 : ANY_REMOTE       : python diffhour.py -args "-nodiff -recursive -age 1h  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+imr                  : LOCAL            : python windows\randdirect.py -args "imr  %%cmd_args%% " -project Ops
+imr                  : ANY_REMOTE       : python windows\randdirect.py -args "imr  %%cmd_args%% " -project Ops
+ipconfig             : LOCAL            : ifconfig %%cmd_args%%
+ipconfig             : ANY_REMOTE       : ifconfig %%cmd_args%%
+jscan                : LOCAL            : script jscanner.dss -args " %%cmd_args%% " -project Ops
+jscan                : ANY_REMOTE       : script jscanner.dss -args " %%cmd_args%% " -project Ops
+kasstatus            : LOCAL            : script windows/kasstatus.dss -args " %%cmd_args%% " -project Ops
+kasstatus            : ANY_REMOTE       : script windows/kasstatus.dss -args " %%cmd_args%% " -project Ops
+kisu_enable          : LOCAL            : lpsetenv -name _DEMI_KISU_ENABLED -value  %%cmd_args%%
+kisu_enable          : ANY_REMOTE       : lpsetenv -name _DEMI_KISU_ENABLED -value  %%cmd_args%%
+kisu_usebh           : LOCAL            : python _KiSu_BH_enable.py -args " %%cmd_args%% "
+  Options: enable 
+kisu_usebh           : ANY_REMOTE       : python _KiSu_BH_enable.py -args " %%cmd_args%% "
+  Options: enable 
+knock                : LOCAL            : python PortKnock/_Knock.py -args " %%cmd_args%% "
+  Options: dest src k1 k2 k3 k4 k5 
+knock                : ANY_REMOTE       : python PortKnock/_Knock.py -args " %%cmd_args%% "
+  Options: dest src k1 k2 k3 k4 k5 
+listdrives           : ANY_REMOTE       : python Lib/ops/survey/diskinfo.py -project Ops -args " %%cmd_args%% "
+lnk_parse            : LOCAL            : python lnk_parse.py -args " %%cmd_args%% " -project Ops
+  Options: -version h -help r -recent-documents n -nethood d -desktop a -all f -force-get 
+lnk_parse            : ANY_REMOTE       : python lnk_parse.py -args " %%cmd_args%% " -project Ops
+  Options: -version h -help r -recent-documents n -nethood d -desktop a -all f -force-get 
+load                 : LOCAL            : loadplugin %%cmd_args%%
+load                 : ANY_REMOTE       : loadplugin %%cmd_args%%
+lpr                  : LOCAL            : python windows\randdirect.py -args "lpr  %%cmd_args%% " -project Ops
+lpr                  : ANY_REMOTE       : python windows\randdirect.py -args "lpr  %%cmd_args%% " -project Ops
+ls                   : LOCAL            : dir %%cmd_args%%
+ls                   : ANY_REMOTE       : dir %%cmd_args%%
+mcafee               : LOCAL            : python lib\ops\psp\mcafee.py -args " %%cmd_args%% " -project Ops
+mcafee               : ANY_REMOTE       : python lib\ops\psp\mcafee.py -args " %%cmd_args%% " -project Ops
+mcafee-epo           : LOCAL            : python lib\ops\psp\mcafee-epo.py -args " %%cmd_args%% " -project Ops
+mcafee-epo           : ANY_REMOTE       : python lib\ops\psp\mcafee-epo.py -args " %%cmd_args%% " -project Ops
+monitor              : LOCAL            : background log=monitor guiflag=monitor %%cmd_args%%
+monitor              : ANY_REMOTE       : background log=monitor guiflag=monitor %%cmd_args%%
+mv                   : LOCAL            : move %%cmd_args%%
+mv                   : ANY_REMOTE       : move %%cmd_args%%
+netgetdcname         : LOCAL            : domaincontroller -primary %%cmd_args%%
+netgetdcname         : ANY_REMOTE       : domaincontroller -primary %%cmd_args%%
+netstat              : LOCAL            : netconnections %%cmd_args%%
+netstat              : ANY_REMOTE       : netconnections %%cmd_args%%
+nhour                : LOCAL            : python diffhour.py -args "-nodiff -recursive -age  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+nhour                : ANY_REMOTE       : python diffhour.py -args "-nodiff -recursive -age  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+notify               : LOCAL            : guiflag=notify %%cmd_args%%
+notify               : ANY_REMOTE       : guiflag=notify %%cmd_args%%
+nsg                  : LOCAL            : python nsg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+nsg                  : ANY_REMOTE       : python nsg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+nslookup             : LOCAL            : nameserverlookup %%cmd_args%%
+nslookup             : ANY_REMOTE       : nameserverlookup %%cmd_args%%
+paperfind            : LOCAL            : python paperfind.py -args " %%cmd_args%% " -project Ops
+  Options: help regex id all any memory data 
+paperfind            : ANY_REMOTE       : python paperfind.py -args " %%cmd_args%% " -project Ops
+  Options: help regex id all any memory data 
+pc2.2_install        : LOCAL            : script Install/_Pc2.2Install.dss -args "INSTALL  %%cmd_args%% " -project Pc2.2
+pc2.2_install        : ANY_REMOTE       : script Install/_Pc2.2Install.dss -args "INSTALL  %%cmd_args%% " -project Pc2.2
+pc2.2_pick           : LOCAL            : python Payload/_Pc2.2Prep.py -args "-action pick %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_pick           : ANY_REMOTE       : python Payload/_Pc2.2Prep.py -args "-action pick %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_prep           : LOCAL            : python Payload/_Pc2.2Prep.py -args "-action configure %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_prep           : ANY_REMOTE       : python Payload/_Pc2.2Prep.py -args "-action configure %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_uninstall      : LOCAL            : script Install/_Pc2.2Uninstall.dss -args " %%cmd_args%% " -project Pc2.2
+pc2.2_uninstall      : ANY_REMOTE       : script Install/_Pc2.2Uninstall.dss -args " %%cmd_args%% " -project Pc2.2
+pc2.2_upgrade        : LOCAL            : script Install/_Pc2.2Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc2.2
+pc2.2_upgrade        : ANY_REMOTE       : script Install/_Pc2.2Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc2.2
+pc_connect           : LOCAL            : local stopaliasing pc_connect %%cmd_args%%
+pc_connect           : ANY_REMOTE       : local stopaliasing pc_connect %%cmd_args%%
+pc_install           : LOCAL            : script Install/_Install.dss -args "INSTALL  %%cmd_args%% " -project Pc
+pc_install           : ANY_REMOTE       : script Install/_Install.dss -args "INSTALL  %%cmd_args%% " -project Pc
+pc_listen            : LOCAL            : local stopaliasing pc_listen %%cmd_args%%
+pc_listen            : ANY_REMOTE       : local stopaliasing pc_listen %%cmd_args%%
+pc_master            : LOCAL            : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: calladdr callport exename fire nofire tls notls imm noimm key listen loops ldur laddr lport nolisten pcid pcp maxdata failwait sendwait maxfail proxyaddr proxyport proxyuser proxypass qdel noqdel wind nowind level3 level4 i386 x64 sharedlib exe tcp http verbose utilityburst appcompat winsockhelperapi generic driver process info 
+pc_master            : ANY_REMOTE       : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: calladdr callport exename fire nofire tls notls imm noimm key listen loops ldur laddr lport nolisten pcid pcp maxdata failwait sendwait maxfail proxyaddr proxyport proxyuser proxypass qdel noqdel wind nowind level3 level4 i386 x64 sharedlib exe tcp http verbose utilityburst appcompat winsockhelperapi generic driver process info 
+pc_old               : LOCAL            : local script _OldPc.dss -args " %%cmd_args%% "
+  Options: cpaddr run payload 
+pc_old               : ANY_REMOTE       : local script _OldPc.dss -args " %%cmd_args%% "
+  Options: cpaddr run payload 
+pc_pick              : LOCAL            : python Payload/_Prep.py -args "-action pick %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_pick              : ANY_REMOTE       : python Payload/_Prep.py -args "-action pick %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_prep              : LOCAL            : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_prep              : ANY_REMOTE       : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_uninstall         : LOCAL            : script Install/_Uninstall.dss -args " %%cmd_args%% " -project Pc
+pc_uninstall         : ANY_REMOTE       : script Install/_Uninstall.dss -args " %%cmd_args%% " -project Pc
+pc_upgrade           : LOCAL            : script Install/_Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc
+pc_upgrade           : ANY_REMOTE       : script Install/_Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc
+pcstate              : LOCAL            : python pcstate.py -args " %%cmd_args%% " -project Ops
+pcstate              : ANY_REMOTE       : python pcstate.py -args " %%cmd_args%% " -project Ops
+peel                 : LOCAL            : python Peel/_Peel.py -args " %%cmd_args%% " -project Dsz
+  Options: payload technique 
+peel                 : ANY_REMOTE       : python Peel/_Peel.py -args " %%cmd_args%% " -project Dsz
+  Options: payload technique 
+periodic             : LOCAL            : python windows\periodic.py -args " %%cmd_args%% " -project Ops
+  Options: h -help p -period n -no-wait f -foreground i -ignore-errors c -count t -max-runtime 
+periodic             : ANY_REMOTE       : python windows\periodic.py -args " %%cmd_args%% " -project Ops
+  Options: h -help p -period n -no-wait f -foreground i -ignore-errors c -count t -max-runtime 
+pfroadd              : LOCAL            : python windows\regmove.py -args "-a  %%cmd_args%% " -project Ops
+pfroadd              : ANY_REMOTE       : python windows\regmove.py -args "-a  %%cmd_args%% " -project Ops
+pfroquery            : LOCAL            : python windows\regmove.py -args "-q  %%cmd_args%% " -project Ops
+pfroquery            : ANY_REMOTE       : python windows\regmove.py -args "-q  %%cmd_args%% " -project Ops
+pfroremove           : LOCAL            : python windows\regmove.py -args "-r  %%cmd_args%% " -project Ops
+pfroremove           : ANY_REMOTE       : python windows\regmove.py -args "-r  %%cmd_args%% " -project Ops
+prep_ur_egg          : LOCAL            : python prep_ur_egg.py -args " %%cmd_args%% " -project Ops
+prep_ur_egg          : ANY_REMOTE       : python prep_ur_egg.py -args " %%cmd_args%% " -project Ops
+prettych             : LOCAL            : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+prettych             : ANY_REMOTE       : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+problem              : LOCAL            : python problem.py -args " %%cmd_args%% "
+problem              : ANY_REMOTE       : python problem.py -args " %%cmd_args%% "
+processconnections   : LOCAL            : python windows\processconnections.py -args " %%cmd_args%% " -project Ops
+  Options: pid 
+processconnections   : ANY_REMOTE       : python windows\processconnections.py -args " %%cmd_args%% " -project Ops
+  Options: pid 
+processdeep          : ANY_REMOTE       : python Lib/ops/survey/processdeep.py -project Ops -args " %%cmd_args%% "
+prompt               : LOCAL            : script HelperScripts/_AddPrompt.dss -args " %%cmd_args%% "
+prompt               : ANY_REMOTE       : script HelperScripts/_AddPrompt.dss -args " %%cmd_args%% "
+ps                   : LOCAL            : processes -list %%cmd_args%%
+ps                   : ANY_REMOTE       : processes -list %%cmd_args%%
+psg                  : LOCAL            : python psg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+psg                  : ANY_REMOTE       : python psg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+psp_avoidance        : LOCAL            : script PSP/_Avoidance.dss -args " %%cmd_args%% " -project Dsz
+  Options: enable disable no_drni no_dswi use_bh 
+psp_avoidance        : ANY_REMOTE       : script PSP/_Avoidance.dss -args " %%cmd_args%% " -project Dsz
+  Options: enable disable no_drni no_dswi use_bh 
+pulist               : LOCAL            : python windows/remoteprocesslist.py -args "--reg --target  %%cmd_args%% "
+pulist               : ANY_REMOTE       : python windows/remoteprocesslist.py -args "--reg --target  %%cmd_args%% "
+quitanddelete        : LOCAL            : script windows/safeQuit.dss -project Ops %%cmd_args%%
+quitanddelete        : ANY_REMOTE       : script windows/safeQuit.dss -project Ops %%cmd_args%%
+randdirect           : LOCAL            : python windows\randdirect.py -args " %%cmd_args%% " -project Ops
+  Options: tcp udp value lplisten implantlisten portsharing target connections limitconnections sendnotify packetsize 
+randdirect           : ANY_REMOTE       : python windows\randdirect.py -args " %%cmd_args%% " -project Ops
+  Options: tcp udp value lplisten implantlisten portsharing target connections limitconnections sendnotify packetsize 
+reg_move_delay       : LOCAL            : registryquery -hive l -key "SYSTEM\CurrentControlSet\control\session manager" %%cmd_args%%
+reg_move_delay       : ANY_REMOTE       : registryquery -hive l -key "SYSTEM\CurrentControlSet\control\session manager" %%cmd_args%%
+registrytimes        : LOCAL            : python windows/regtimes.py -args " %%cmd_args%% " -project Ops
+registrytimes        : ANY_REMOTE       : python windows/regtimes.py -args " %%cmd_args%% " -project Ops
+ripper               : LOCAL            : python ripper\ripper.py -args " %%cmd_args%% " -project Ops
+  Options: -p -m -l 
+ripper               : ANY_REMOTE       : python ripper\ripper.py -args " %%cmd_args%% " -project Ops
+  Options: -p -m -l 
+rm                   : LOCAL            : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+rm                   : ANY_REMOTE       : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+rpc                  : LOCAL            : python windows/rpctouch.py -args " %%cmd_args%% " -project Ops
+rpc                  : ANY_REMOTE       : python windows/rpctouch.py -args " %%cmd_args%% " -project Ops
+runassystem          : LOCAL            : script HelperScripts/windows/_RunAsSystem.dss -args " %%cmd_args%% "
+runassystem          : ANY_REMOTE       : script HelperScripts/windows/_RunAsSystem.dss -args " %%cmd_args%% "
+runtime              : ANY_REMOTE       : python runtime.py -project Ops -args " %%cmd_args%% "
+scan                 : LOCAL            : python windows/scanner.py -args " %%cmd_args%% " -project Ops
+scan                 : ANY_REMOTE       : python windows/scanner.py -args " %%cmd_args%% " -project Ops
+scansweep            : LOCAL            : python scansweep\scansweep.py -args " %%cmd_args%% " -project Ops
+  Options: type target exclude period override cidroverride escalate verbose session nowait database timeout update 
+scansweep            : ANY_REMOTE       : python scansweep\scansweep.py -args " %%cmd_args%% " -project Ops
+  Options: type target exclude period override cidroverride escalate verbose session nowait database timeout update 
+screenshot           : LOCAL            : python Screenshot/_Screenshot.pyo -args " %%cmd_args%% " -quiet
+  Options: res format wnd force 
+screenshot           : ANY_REMOTE       : python Screenshot/_Screenshot.pyo -args " %%cmd_args%% " -quiet
+  Options: res format wnd force 
+st                   : LOCAL            : python st.py -args " %%cmd_args%% " -project Ops
+st                   : ANY_REMOTE       : python st.py -args " %%cmd_args%% " -project Ops
+strangeland          : LOCAL            : python strangeland.py -project StLa -args " %%cmd_args%% "
+strangeland          : ANY_REMOTE       : python strangeland.py -project StLa -args " %%cmd_args%% "
+survey               : LOCAL            : python survey.py -args " %%cmd_args%% "
+  Options: run modify sections override exclude include exclusions quiet 
+survey               : ANY_REMOTE       : python survey.py -args " %%cmd_args%% "
+  Options: run modify sections override exclude include exclusions quiet 
+tasking              : LOCAL            : python _tasking.py -args " %%cmd_args%% "
+  Options: auto verbose tasking max 
+tasking              : ANY_REMOTE       : python _tasking.py -args " %%cmd_args%% "
+  Options: auto verbose tasking max 
+trigger              : LOCAL            : script _SendCFTrigger.dss -args " %%cmd_args%% " -project Pc
+trigger              : ANY_REMOTE       : script _SendCFTrigger.dss -args " %%cmd_args%% " -project Pc
+trigger_old          : LOCAL            : script _OldTrigger.dss -args " %%cmd_args%% " -project Pc
+trigger_old          : ANY_REMOTE       : script _OldTrigger.dss -args " %%cmd_args%% " -project Pc
+unixredirect         : LOCAL            : python windows\unixredir.py -args " %%cmd_args%% "
+  Options: y i p c o r t 
+unixredirect         : ANY_REMOTE       : python windows\unixredir.py -args " %%cmd_args%% "
+  Options: y i p c o r t 
+usbmonitor           : LOCAL            : background python usbmonitor.py -args " %%cmd_args%% "
+  Options: interval 
+usbmonitor           : ANY_REMOTE       : background python usbmonitor.py -args " %%cmd_args%% "
+  Options: interval 
+usefile              : LOCAL            : lpsetenv -name _USEFILE -value %%cmd_args%%
+usefile              : ANY_REMOTE       : lpsetenv -name _USEFILE -value %%cmd_args%%
+userquery            : LOCAL            : python windows/userquery.py -project Ops -args " %%cmd_args%% "
+userquery            : ANY_REMOTE       : python windows/userquery.py -project Ops -args " %%cmd_args%% "
+utbu_install         : LOCAL            : script _UtilityBurst.dss -args "-action INSTALL  %%cmd_args%% "
+utbu_install         : ANY_REMOTE       : script _UtilityBurst.dss -args "-action INSTALL  %%cmd_args%% "
+utbu_load            : LOCAL            : script _UtilityBurst.dss -args "-action LOAD  %%cmd_args%% "
+utbu_load            : ANY_REMOTE       : script _UtilityBurst.dss -args "-action LOAD  %%cmd_args%% "
+utbu_status          : LOCAL            : script _UtilityBurst.dss -args "-action STATUS  %%cmd_args%% "
+utbu_status          : ANY_REMOTE       : script _UtilityBurst.dss -args "-action STATUS  %%cmd_args%% "
+utbu_uninstall       : LOCAL            : script _UtilityBurst.dss -args "-action UNINSTALL  %%cmd_args%% "
+utbu_uninstall       : ANY_REMOTE       : script _UtilityBurst.dss -args "-action UNINSTALL  %%cmd_args%% "
+utbu_unload          : LOCAL            : script _UtilityBurst.dss -args "-action UNLOAD  %%cmd_args%% "
+utbu_unload          : ANY_REMOTE       : script _UtilityBurst.dss -args "-action UNLOAD  %%cmd_args%% "
+utbu_verifyinstall   : LOCAL            : script _UtilityBurst.dss -args "-action VERIFYINSTALL  %%cmd_args%% "
+utbu_verifyinstall   : ANY_REMOTE       : script _UtilityBurst.dss -args "-action VERIFYINSTALL  %%cmd_args%% "
+utbu_verifyrunning   : LOCAL            : script _UtilityBurst.dss -args "-action VERIFYRUNNING  %%cmd_args%% "
+utbu_verifyrunning   : ANY_REMOTE       : script _UtilityBurst.dss -args "-action VERIFYRUNNING  %%cmd_args%% "
+utilityburst         : LOCAL            : script _UtilityBurst.dss %%cmd_args%% "
+utilityburst         : ANY_REMOTE       : script _UtilityBurst.dss %%cmd_args%% "
+vget                 : LOCAL            : python windows\vget.py -args " %%cmd_args%% " -project Ops
+  Options: vget 
+vget                 : ANY_REMOTE       : python windows\vget.py -args " %%cmd_args%% " -project Ops
+  Options: vget 
+whatsup              : LOCAL            : python whatsup.py -args " %%cmd_args%% " -project Ops
+whatsup              : ANY_REMOTE       : python whatsup.py -args " %%cmd_args%% " -project Ops
+yak                  : LOCAL            : python windows/yak.py -args " %%cmd_args%% " -project Ops
+yak                  : ANY_REMOTE       : python windows/yak.py -args " %%cmd_args%% " -project Ops
+
+    Command completed successfully
+21:26:08>> aliases
+[21:26:08] ID: 332 'aliases' started [target: z0.0.0.1]
+acquiretoken         : LOCAL            : script _AcquireToken.dss %%cmd_args%%
+acquiretoken         : ANY_REMOTE       : script _AcquireToken.dss %%cmd_args%%
+arparp               : LOCAL            : python windows/arparp.py -args " %%cmd_args%% " -project Ops
+arparp               : ANY_REMOTE       : python windows/arparp.py -args " %%cmd_args%% " -project Ops
+channels             : LOCAL            : commands %%cmd_args%%
+channels             : ANY_REMOTE       : commands %%cmd_args%%
+checkpsp             : LOCAL            : python windows/checkpsp.py -args " %%cmd_args%% " -project Ops
+checkpsp             : ANY_REMOTE       : python windows/checkpsp.py -args " %%cmd_args%% " -project Ops
+checksum             : LOCAL            : script windows/checksum.dss -args " %%cmd_args%% " -project Ops
+checksum             : ANY_REMOTE       : script windows/checksum.dss -args " %%cmd_args%% " -project Ops
+commands             : LOCAL            : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+commands             : ANY_REMOTE       : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+copyegg              : LOCAL            : python lib\sendfile.py -args " --destdir imps  %%cmd_args%% " -project Ops
+copyegg              : ANY_REMOTE       : python lib\sendfile.py -args " --destdir imps  %%cmd_args%% " -project Ops
+copyfast             : LOCAL            : python lib\sendfile.py -args " --destdir fast  %%cmd_args%% " -project Ops
+copyfast             : ANY_REMOTE       : python lib\sendfile.py -args " --destdir fast  %%cmd_args%% " -project Ops
+copyget              : LOCAL            : script windows/copyget.dss -args " %%cmd_args%% " -project Ops
+  Options: temppath tempfile 
+copyget              : ANY_REMOTE       : script windows/copyget.dss -args " %%cmd_args%% " -project Ops
+  Options: temppath tempfile 
+copypc               : LOCAL            : python copypc.py -args " %%cmd_args%% " -project Ops
+copypc               : ANY_REMOTE       : python copypc.py -args " %%cmd_args%% " -project Ops
+copyslow             : LOCAL            : python lib\sendfile.py -args " --destdir slow  %%cmd_args%% " -project Ops
+copyslow             : ANY_REMOTE       : python lib\sendfile.py -args " --destdir slow  %%cmd_args%% " -project Ops
+cp                   : LOCAL            : copy %%cmd_args%%
+cp                   : ANY_REMOTE       : copy %%cmd_args%%
+darkpulsar           : LOCAL            : python dapu.py -project DaPu -args "  %%cmd_args%%  "
+darkpulsar           : ANY_REMOTE       : python dapu.py -project DaPu -args "  %%cmd_args%%  "
+darkskyline          : LOCAL            : python _DarkSkyline.pyo -args " %%cmd_args%% "
+  Options: method 
+darkskyline          : ANY_REMOTE       : python _DarkSkyline.pyo -args " %%cmd_args%% "
+  Options: method 
+debug                : LOCAL            : lpsetenv -name _DEBUG -value %%cmd_args%%
+debug                : ANY_REMOTE       : lpsetenv -name _DEBUG -value %%cmd_args%%
+debugload            : LOCAL            : lpsetenv -name _DEBUGLOAD -value %%cmd_args%%
+debugload            : ANY_REMOTE       : lpsetenv -name _DEBUGLOAD -value %%cmd_args%%
+del                  : LOCAL            : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+del                  : ANY_REMOTE       : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+diffhour             : LOCAL            : python diffhour.py -args " %%cmd_args%% " -project Ops
+  Options: mask path age recursive restart safe sysdrive nodiff noquiet fromtime centeredtime 
+diffhour             : ANY_REMOTE       : python diffhour.py -args " %%cmd_args%% " -project Ops
+  Options: mask path age recursive restart safe sysdrive nodiff noquiet fromtime centeredtime 
+dirget               : LOCAL            : script windows/dirget.dss -args " %%cmd_args%% " -project Ops
+dirget               : ANY_REMOTE       : script windows/dirget.dss -args " %%cmd_args%% " -project Ops
+disable              : LOCAL            : script HelperScripts/_DisableCommand.dss -args " %%cmd_args%% "
+disable              : ANY_REMOTE       : script HelperScripts/_DisableCommand.dss -args " %%cmd_args%% "
+disableauditing      : ANY_REMOTE       : python Lib/ops/survey/auditing.py -project Ops -args " %%cmd_args%% "
+dmgz_install         : LOCAL            : python _DmGz.py -args "-action INSTALL  -driver  %%cmd_args%% "
+dmgz_install         : ANY_REMOTE       : python _DmGz.py -args "-action INSTALL  -driver  %%cmd_args%% "
+dmgz_load            : LOCAL            : python _DmGz.py -args "-action LOAD  -driver  %%cmd_args%% "
+dmgz_load            : ANY_REMOTE       : python _DmGz.py -args "-action LOAD  -driver  %%cmd_args%% "
+dmgz_status          : LOCAL            : python _DmGz.py -args "-action STATUS -driver  %%cmd_args%% "
+dmgz_status          : ANY_REMOTE       : python _DmGz.py -args "-action STATUS -driver  %%cmd_args%% "
+dmgz_uninstall       : LOCAL            : python _DmGz.py -args "-action UNINSTALL  -driver  %%cmd_args%% "
+dmgz_uninstall       : ANY_REMOTE       : python _DmGz.py -args "-action UNINSTALL  -driver  %%cmd_args%% "
+dmgz_unload          : LOCAL            : python _DmGz.py -args "-action UNLOAD  -driver  %%cmd_args%% "
+dmgz_unload          : ANY_REMOTE       : python _DmGz.py -args "-action UNLOAD  -driver  %%cmd_args%% "
+dmgz_verifyinstall   : LOCAL            : python _DmGz.py -args "-action VERIFYINSTALL  -driver  %%cmd_args%% "
+dmgz_verifyinstall   : ANY_REMOTE       : python _DmGz.py -args "-action VERIFYINSTALL  -driver  %%cmd_args%% "
+dmgz_verifyrunning   : LOCAL            : python _DmGz.py -args "-action VERIFYRUNNING  -driver  %%cmd_args%% "
+dmgz_verifyrunning   : ANY_REMOTE       : python _DmGz.py -args "-action VERIFYRUNNING  -driver  %%cmd_args%% "
+doormangauze         : LOCAL            : python _DmGz.py -args " %%cmd_args%% "
+doormangauze         : ANY_REMOTE       : python _DmGz.py -args " %%cmd_args%% "
+doublefeature        : ANY_REMOTE       : log=DoubleFeature_ python doublefeature.py -project Df -args " %%cmd_args%% "
+driverlist           : LOCAL            : python Lib/ops/survey/driverlist.py -project Ops -args " %%cmd_args%% "
+driverlist           : ANY_REMOTE       : python Lib/ops/survey/driverlist.py -project Ops -args " %%cmd_args%% "
+dsky_deletecapture   : LOCAL            : python _DarkSkyline.pyo -args "-action DELETECAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_deletecapture   : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action DELETECAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_getcapture      : LOCAL            : python _DarkSkyline.pyo -args "-action GETCAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_getcapture      : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action GETCAPTURE  %%cmd_args%% "
+  Options: name 
+dsky_getfilter       : LOCAL            : python _DarkSkyline.pyo -args "-action GETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_getfilter       : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action GETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_install         : LOCAL            : python _DarkSkyline.pyo -args "-action INSTALL  %%cmd_args%% "
+  Options: name 
+dsky_install         : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action INSTALL  %%cmd_args%% "
+  Options: name 
+dsky_load            : LOCAL            : python _DarkSkyline.pyo -args "-action LOAD  %%cmd_args%% "
+  Options: name 
+dsky_load            : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action LOAD  %%cmd_args%% "
+  Options: name 
+dsky_setfilter       : LOCAL            : python _DarkSkyline.pyo -args "-action SETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_setfilter       : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action SETFILTER  %%cmd_args%% "
+  Options: name 
+dsky_setkey          : LOCAL            : python _DarkSkyline.pyo -args "-action SETKEY  %%cmd_args%% "
+  Options: name 
+dsky_setkey          : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action SETKEY  %%cmd_args%% "
+  Options: name 
+dsky_setmaxsize      : LOCAL            : python _DarkSkyline.pyo -args "-action SETMAXSIZE  %%cmd_args%% "
+  Options: name 
+dsky_setmaxsize      : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action SETMAXSIZE  %%cmd_args%% "
+  Options: name 
+dsky_start           : LOCAL            : python _DarkSkyline.pyo -args "-action START  %%cmd_args%% "
+  Options: name 
+dsky_start           : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action START  %%cmd_args%% "
+  Options: name 
+dsky_status          : LOCAL            : python _DarkSkyline.pyo -args "-action STATUS  %%cmd_args%% "
+  Options: name 
+dsky_status          : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action STATUS  %%cmd_args%% "
+  Options: name 
+dsky_stop            : LOCAL            : python _DarkSkyline.pyo -args "-action STOP  %%cmd_args%% "
+  Options: name 
+dsky_stop            : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action STOP  %%cmd_args%% "
+  Options: name 
+dsky_uninstall       : LOCAL            : python _DarkSkyline.pyo -args "-action UNINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_uninstall       : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action UNINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_unload          : LOCAL            : python _DarkSkyline.pyo -args "-action UNLOAD  %%cmd_args%% "
+  Options: name 
+dsky_unload          : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action UNLOAD  %%cmd_args%% "
+  Options: name 
+dsky_verifyinstall   : LOCAL            : python _DarkSkyline.pyo -args "-action VERIFYINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_verifyinstall   : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action VERIFYINSTALL  %%cmd_args%% "
+  Options: name 
+dsky_verifyrunning   : LOCAL            : python _DarkSkyline.pyo -args "-action VERIFYRUNNING  %%cmd_args%% "
+  Options: name 
+dsky_verifyrunning   : ANY_REMOTE       : python _DarkSkyline.pyo -args "-action VERIFYRUNNING  %%cmd_args%% "
+  Options: name 
+emkg_plist           : LOCAL            : python windows/remoteprocesslist.py -args "--wmi --target  %%cmd_args%% "
+emkg_plist           : ANY_REMOTE       : python windows/remoteprocesslist.py -args "--wmi --target  %%cmd_args%% "
+eventlogclean        : LOCAL            : script windows/eventlogclean.dss -args " %%cmd_args%% " -project Ops
+eventlogclean        : ANY_REMOTE       : script windows/eventlogclean.dss -args " %%cmd_args%% " -project Ops
+eventlogmonitor      : LOCAL            : python windows\eventlogs.py -args " -m  %%cmd_args%% " -project Ops
+eventlogmonitor      : ANY_REMOTE       : python windows\eventlogs.py -args " -m  %%cmd_args%% " -project Ops
+eventlogsearch       : LOCAL            : python eventlogsearch.py -args " %%cmd_args%% " -project Ops
+  Options: num id log sid string startrecord xpath max target summary logons monitor interval 
+eventlogsearch       : ANY_REMOTE       : python eventlogsearch.py -args " %%cmd_args%% " -project Ops
+  Options: num id log sid string startrecord xpath max target summary logons monitor interval 
+eventlogsurvey       : LOCAL            : python windows\eventlogs.py -args "  %%cmd_args%% " -project Ops
+eventlogsurvey       : ANY_REMOTE       : python windows\eventlogs.py -args "  %%cmd_args%% " -project Ops
+exploit              : LOCAL            : script _LegacyExploit.dss -args " %%cmd_args%% "
+exploit              : ANY_REMOTE       : script _LegacyExploit.dss -args " %%cmd_args%% "
+flav_install         : LOCAL            : python _FlAv.py -args "-action INSTALL  %%cmd_args%% "
+flav_install         : ANY_REMOTE       : python _FlAv.py -args "-action INSTALL  %%cmd_args%% "
+flav_load            : LOCAL            : python _FlAv.py -args "-action LOAD  %%cmd_args%% "
+flav_load            : ANY_REMOTE       : python _FlAv.py -args "-action LOAD  %%cmd_args%% "
+flav_plugins         : LOCAL            : python flavplugincontrol.py -args " %%cmd_args%% " -project Ops
+  Options: enable disable status 
+flav_plugins         : ANY_REMOTE       : python flavplugincontrol.py -args " %%cmd_args%% " -project Ops
+  Options: enable disable status 
+flav_status          : LOCAL            : python _FlAv.py -args "-action STATUS  %%cmd_args%% "
+flav_status          : ANY_REMOTE       : python _FlAv.py -args "-action STATUS  %%cmd_args%% "
+flav_uninstall       : LOCAL            : python _FlAv.py -args "-action UNINSTALL  %%cmd_args%% "
+flav_uninstall       : ANY_REMOTE       : python _FlAv.py -args "-action UNINSTALL  %%cmd_args%% "
+flav_upgrade         : LOCAL            : python _FlAv.py -args "-action UPGRADE  %%cmd_args%% "
+flav_upgrade         : ANY_REMOTE       : python _FlAv.py -args "-action UPGRADE  %%cmd_args%% "
+flav_verifyinstall   : LOCAL            : python _FlAv.py -args "-action VERIFYINSTALL  %%cmd_args%% "
+flav_verifyinstall   : ANY_REMOTE       : python _FlAv.py -args "-action VERIFYINSTALL  %%cmd_args%% "
+flav_verifyrunning   : LOCAL            : python _FlAv.py -args "-action VERIFYRUNNING  %%cmd_args%% "
+flav_verifyrunning   : ANY_REMOTE       : python _FlAv.py -args "-action VERIFYRUNNING  %%cmd_args%% "
+flewavenue           : LOCAL            : python _FlAv.py %%cmd_args%% "
+flewavenue           : ANY_REMOTE       : python _FlAv.py %%cmd_args%% "
+forcelogon           : LOCAL            : script _ForceLogon.dss -args " %%cmd_args%% "
+  Options: user 
+forcelogon           : ANY_REMOTE       : script _ForceLogon.dss -args " %%cmd_args%% "
+  Options: user 
+free                 : LOCAL            : freeplugin %%cmd_args%%
+free                 : ANY_REMOTE       : freeplugin %%cmd_args%%
+freshscan            : LOCAL            : python windows\freshscan.py -args " %%cmd_args%% " -project Ops
+freshscan            : ANY_REMOTE       : python windows\freshscan.py -args " %%cmd_args%% " -project Ops
+goodget              : LOCAL            : script windows/goodget.dss -args " %%cmd_args%% " -project Ops
+goodget              : ANY_REMOTE       : script windows/goodget.dss -args " %%cmd_args%% " -project Ops
+history              : LOCAL            : python History/_UserAssist.pyo -args " %%cmd_args%% " -project Dsz
+  Options: type user verbose 
+history              : ANY_REMOTE       : python History/_UserAssist.pyo -args " %%cmd_args%% " -project Dsz
+  Options: type user verbose 
+hittun               : LOCAL            : python windows\randdirect.py -args "hittun  %%cmd_args%% " -project Ops
+hittun               : ANY_REMOTE       : python windows\randdirect.py -args "hittun  %%cmd_args%% " -project Ops
+hour                 : LOCAL            : python diffhour.py -args "-nodiff -recursive -age 1h  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+hour                 : ANY_REMOTE       : python diffhour.py -args "-nodiff -recursive -age 1h  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+imr                  : LOCAL            : python windows\randdirect.py -args "imr  %%cmd_args%% " -project Ops
+imr                  : ANY_REMOTE       : python windows\randdirect.py -args "imr  %%cmd_args%% " -project Ops
+ipconfig             : LOCAL            : ifconfig %%cmd_args%%
+ipconfig             : ANY_REMOTE       : ifconfig %%cmd_args%%
+jscan                : LOCAL            : script jscanner.dss -args " %%cmd_args%% " -project Ops
+jscan                : ANY_REMOTE       : script jscanner.dss -args " %%cmd_args%% " -project Ops
+kasstatus            : LOCAL            : script windows/kasstatus.dss -args " %%cmd_args%% " -project Ops
+kasstatus            : ANY_REMOTE       : script windows/kasstatus.dss -args " %%cmd_args%% " -project Ops
+kisu_enable          : LOCAL            : lpsetenv -name _DEMI_KISU_ENABLED -value  %%cmd_args%%
+kisu_enable          : ANY_REMOTE       : lpsetenv -name _DEMI_KISU_ENABLED -value  %%cmd_args%%
+kisu_usebh           : LOCAL            : python _KiSu_BH_enable.py -args " %%cmd_args%% "
+  Options: enable 
+kisu_usebh           : ANY_REMOTE       : python _KiSu_BH_enable.py -args " %%cmd_args%% "
+  Options: enable 
+knock                : LOCAL            : python PortKnock/_Knock.py -args " %%cmd_args%% "
+  Options: dest src k1 k2 k3 k4 k5 
+knock                : ANY_REMOTE       : python PortKnock/_Knock.py -args " %%cmd_args%% "
+  Options: dest src k1 k2 k3 k4 k5 
+listdrives           : ANY_REMOTE       : python Lib/ops/survey/diskinfo.py -project Ops -args " %%cmd_args%% "
+lnk_parse            : LOCAL            : python lnk_parse.py -args " %%cmd_args%% " -project Ops
+  Options: -version h -help r -recent-documents n -nethood d -desktop a -all f -force-get 
+lnk_parse            : ANY_REMOTE       : python lnk_parse.py -args " %%cmd_args%% " -project Ops
+  Options: -version h -help r -recent-documents n -nethood d -desktop a -all f -force-get 
+load                 : LOCAL            : loadplugin %%cmd_args%%
+load                 : ANY_REMOTE       : loadplugin %%cmd_args%%
+lpr                  : LOCAL            : python windows\randdirect.py -args "lpr  %%cmd_args%% " -project Ops
+lpr                  : ANY_REMOTE       : python windows\randdirect.py -args "lpr  %%cmd_args%% " -project Ops
+ls                   : LOCAL            : dir %%cmd_args%%
+ls                   : ANY_REMOTE       : dir %%cmd_args%%
+mcafee               : LOCAL            : python lib\ops\psp\mcafee.py -args " %%cmd_args%% " -project Ops
+mcafee               : ANY_REMOTE       : python lib\ops\psp\mcafee.py -args " %%cmd_args%% " -project Ops
+mcafee-epo           : LOCAL            : python lib\ops\psp\mcafee-epo.py -args " %%cmd_args%% " -project Ops
+mcafee-epo           : ANY_REMOTE       : python lib\ops\psp\mcafee-epo.py -args " %%cmd_args%% " -project Ops
+monitor              : LOCAL            : background log=monitor guiflag=monitor %%cmd_args%%
+monitor              : ANY_REMOTE       : background log=monitor guiflag=monitor %%cmd_args%%
+mv                   : LOCAL            : move %%cmd_args%%
+mv                   : ANY_REMOTE       : move %%cmd_args%%
+netgetdcname         : LOCAL            : domaincontroller -primary %%cmd_args%%
+netgetdcname         : ANY_REMOTE       : domaincontroller -primary %%cmd_args%%
+netstat              : LOCAL            : netconnections %%cmd_args%%
+netstat              : ANY_REMOTE       : netconnections %%cmd_args%%
+nhour                : LOCAL            : python diffhour.py -args "-nodiff -recursive -age  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+nhour                : ANY_REMOTE       : python diffhour.py -args "-nodiff -recursive -age  %%cmd_args%% " -project Ops
+  Options: safe sysdrive noquiet fromtime centeredtime 
+notify               : LOCAL            : guiflag=notify %%cmd_args%%
+notify               : ANY_REMOTE       : guiflag=notify %%cmd_args%%
+nsg                  : LOCAL            : python nsg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+nsg                  : ANY_REMOTE       : python nsg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+nslookup             : LOCAL            : nameserverlookup %%cmd_args%%
+nslookup             : ANY_REMOTE       : nameserverlookup %%cmd_args%%
+paperfind            : LOCAL            : python paperfind.py -args " %%cmd_args%% " -project Ops
+  Options: help regex id all any memory data 
+paperfind            : ANY_REMOTE       : python paperfind.py -args " %%cmd_args%% " -project Ops
+  Options: help regex id all any memory data 
+pc2.2_install        : LOCAL            : script Install/_Pc2.2Install.dss -args "INSTALL  %%cmd_args%% " -project Pc2.2
+pc2.2_install        : ANY_REMOTE       : script Install/_Pc2.2Install.dss -args "INSTALL  %%cmd_args%% " -project Pc2.2
+pc2.2_pick           : LOCAL            : python Payload/_Pc2.2Prep.py -args "-action pick %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_pick           : ANY_REMOTE       : python Payload/_Pc2.2Prep.py -args "-action pick %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_prep           : LOCAL            : python Payload/_Pc2.2Prep.py -args "-action configure %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_prep           : ANY_REMOTE       : python Payload/_Pc2.2Prep.py -args "-action configure %%cmd_args%% " -project Pc2.2
+  Options: type arch os bintype extra verbose utilityburst driver process info 
+pc2.2_uninstall      : LOCAL            : script Install/_Pc2.2Uninstall.dss -args " %%cmd_args%% " -project Pc2.2
+pc2.2_uninstall      : ANY_REMOTE       : script Install/_Pc2.2Uninstall.dss -args " %%cmd_args%% " -project Pc2.2
+pc2.2_upgrade        : LOCAL            : script Install/_Pc2.2Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc2.2
+pc2.2_upgrade        : ANY_REMOTE       : script Install/_Pc2.2Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc2.2
+pc_connect           : LOCAL            : local stopaliasing pc_connect %%cmd_args%%
+pc_connect           : ANY_REMOTE       : local stopaliasing pc_connect %%cmd_args%%
+pc_install           : LOCAL            : script Install/_Install.dss -args "INSTALL  %%cmd_args%% " -project Pc
+pc_install           : ANY_REMOTE       : script Install/_Install.dss -args "INSTALL  %%cmd_args%% " -project Pc
+pc_listen            : LOCAL            : local stopaliasing pc_listen %%cmd_args%%
+pc_listen            : ANY_REMOTE       : local stopaliasing pc_listen %%cmd_args%%
+pc_master            : LOCAL            : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: calladdr callport exename fire nofire tls notls imm noimm key listen loops ldur laddr lport nolisten pcid pcp maxdata failwait sendwait maxfail proxyaddr proxyport proxyuser proxypass qdel noqdel wind nowind level3 level4 i386 x64 sharedlib exe tcp http verbose utilityburst appcompat winsockhelperapi generic driver process info 
+pc_master            : ANY_REMOTE       : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: calladdr callport exename fire nofire tls notls imm noimm key listen loops ldur laddr lport nolisten pcid pcp maxdata failwait sendwait maxfail proxyaddr proxyport proxyuser proxypass qdel noqdel wind nowind level3 level4 i386 x64 sharedlib exe tcp http verbose utilityburst appcompat winsockhelperapi generic driver process info 
+pc_old               : LOCAL            : local script _OldPc.dss -args " %%cmd_args%% "
+  Options: cpaddr run payload 
+pc_old               : ANY_REMOTE       : local script _OldPc.dss -args " %%cmd_args%% "
+  Options: cpaddr run payload 
+pc_pick              : LOCAL            : python Payload/_Prep.py -args "-action pick %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_pick              : ANY_REMOTE       : python Payload/_Prep.py -args "-action pick %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_prep              : LOCAL            : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_prep              : ANY_REMOTE       : python Payload/_Prep.py -args "-action configure %%cmd_args%% " -project Pc
+  Options: type level3 level4 arch i386 x64 bintype sharedlib exe tcp http extra verbose utilityburst appcompat winsockhelperapi generic driver process info os 
+pc_uninstall         : LOCAL            : script Install/_Uninstall.dss -args " %%cmd_args%% " -project Pc
+pc_uninstall         : ANY_REMOTE       : script Install/_Uninstall.dss -args " %%cmd_args%% " -project Pc
+pc_upgrade           : LOCAL            : script Install/_Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc
+pc_upgrade           : ANY_REMOTE       : script Install/_Install.dss -args "UPGRADE  %%cmd_args%% " -project Pc
+pcstate              : LOCAL            : python pcstate.py -args " %%cmd_args%% " -project Ops
+pcstate              : ANY_REMOTE       : python pcstate.py -args " %%cmd_args%% " -project Ops
+peel                 : LOCAL            : python Peel/_Peel.py -args " %%cmd_args%% " -project Dsz
+  Options: payload technique 
+peel                 : ANY_REMOTE       : python Peel/_Peel.py -args " %%cmd_args%% " -project Dsz
+  Options: payload technique 
+periodic             : LOCAL            : python windows\periodic.py -args " %%cmd_args%% " -project Ops
+  Options: h -help p -period n -no-wait f -foreground i -ignore-errors c -count t -max-runtime 
+periodic             : ANY_REMOTE       : python windows\periodic.py -args " %%cmd_args%% " -project Ops
+  Options: h -help p -period n -no-wait f -foreground i -ignore-errors c -count t -max-runtime 
+pfroadd              : LOCAL            : python windows\regmove.py -args "-a  %%cmd_args%% " -project Ops
+pfroadd              : ANY_REMOTE       : python windows\regmove.py -args "-a  %%cmd_args%% " -project Ops
+pfroquery            : LOCAL            : python windows\regmove.py -args "-q  %%cmd_args%% " -project Ops
+pfroquery            : ANY_REMOTE       : python windows\regmove.py -args "-q  %%cmd_args%% " -project Ops
+pfroremove           : LOCAL            : python windows\regmove.py -args "-r  %%cmd_args%% " -project Ops
+pfroremove           : ANY_REMOTE       : python windows\regmove.py -args "-r  %%cmd_args%% " -project Ops
+prep_ur_egg          : LOCAL            : python prep_ur_egg.py -args " %%cmd_args%% " -project Ops
+prep_ur_egg          : ANY_REMOTE       : python prep_ur_egg.py -args " %%cmd_args%% " -project Ops
+prettych             : LOCAL            : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+prettych             : ANY_REMOTE       : python Lib/ops/override/commands.py -project Ops -args " %%cmd_args%% "
+  Options: all any local remote astyped verbose echo 
+problem              : LOCAL            : python problem.py -args " %%cmd_args%% "
+problem              : ANY_REMOTE       : python problem.py -args " %%cmd_args%% "
+processconnections   : LOCAL            : python windows\processconnections.py -args " %%cmd_args%% " -project Ops
+  Options: pid 
+processconnections   : ANY_REMOTE       : python windows\processconnections.py -args " %%cmd_args%% " -project Ops
+  Options: pid 
+processdeep          : ANY_REMOTE       : python Lib/ops/survey/processdeep.py -project Ops -args " %%cmd_args%% "
+prompt               : LOCAL            : script HelperScripts/_AddPrompt.dss -args " %%cmd_args%% "
+prompt               : ANY_REMOTE       : script HelperScripts/_AddPrompt.dss -args " %%cmd_args%% "
+ps                   : LOCAL            : processes -list %%cmd_args%%
+ps                   : ANY_REMOTE       : processes -list %%cmd_args%%
+psg                  : LOCAL            : python psg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+psg                  : ANY_REMOTE       : python psg.py -args " %%cmd_args%% " -project Ops
+  Options: STRING 
+psp_avoidance        : LOCAL            : script PSP/_Avoidance.dss -args " %%cmd_args%% " -project Dsz
+  Options: enable disable no_drni no_dswi use_bh 
+psp_avoidance        : ANY_REMOTE       : script PSP/_Avoidance.dss -args " %%cmd_args%% " -project Dsz
+  Options: enable disable no_drni no_dswi use_bh 
+pulist               : LOCAL            : python windows/remoteprocesslist.py -args "--reg --target  %%cmd_args%% "
+pulist               : ANY_REMOTE       : python windows/remoteprocesslist.py -args "--reg --target  %%cmd_args%% "
+quitanddelete        : LOCAL            : script windows/safeQuit.dss -project Ops %%cmd_args%%
+quitanddelete        : ANY_REMOTE       : script windows/safeQuit.dss -project Ops %%cmd_args%%
+randdirect           : LOCAL            : python windows\randdirect.py -args " %%cmd_args%% " -project Ops
+  Options: tcp udp value lplisten implantlisten portsharing target connections limitconnections sendnotify packetsize 
+randdirect           : ANY_REMOTE       : python windows\randdirect.py -args " %%cmd_args%% " -project Ops
+  Options: tcp udp value lplisten implantlisten portsharing target connections limitconnections sendnotify packetsize 
+reg_move_delay       : LOCAL            : registryquery -hive l -key "SYSTEM\CurrentControlSet\control\session manager" %%cmd_args%%
+reg_move_delay       : ANY_REMOTE       : registryquery -hive l -key "SYSTEM\CurrentControlSet\control\session manager" %%cmd_args%%
+registrytimes        : LOCAL            : python windows/regtimes.py -args " %%cmd_args%% " -project Ops
+registrytimes        : ANY_REMOTE       : python windows/regtimes.py -args " %%cmd_args%% " -project Ops
+ripper               : LOCAL            : python ripper\ripper.py -args " %%cmd_args%% " -project Ops
+  Options: -p -m -l 
+ripper               : ANY_REMOTE       : python ripper\ripper.py -args " %%cmd_args%% " -project Ops
+  Options: -p -m -l 
+rm                   : LOCAL            : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+rm                   : ANY_REMOTE       : script HelperScripts/_Delete.dss -args " %%cmd_args%% " -project Dsz
+rpc                  : LOCAL            : python windows/rpctouch.py -args " %%cmd_args%% " -project Ops
+rpc                  : ANY_REMOTE       : python windows/rpctouch.py -args " %%cmd_args%% " -project Ops
+runassystem          : LOCAL            : script HelperScripts/windows/_RunAsSystem.dss -args " %%cmd_args%% "
+runassystem          : ANY_REMOTE       : script HelperScripts/windows/_RunAsSystem.dss -args " %%cmd_args%% "
+runtime              : ANY_REMOTE       : python runtime.py -project Ops -args " %%cmd_args%% "
+scan                 : LOCAL            : python windows/scanner.py -args " %%cmd_args%% " -project Ops
+scan                 : ANY_REMOTE       : python windows/scanner.py -args " %%cmd_args%% " -project Ops
+scansweep            : LOCAL            : python scansweep\scansweep.py -args " %%cmd_args%% " -project Ops
+  Options: type target exclude period override cidroverride escalate verbose session nowait database timeout update 
+scansweep            : ANY_REMOTE       : python scansweep\scansweep.py -args " %%cmd_args%% " -project Ops
+  Options: type target exclude period override cidroverride escalate verbose session nowait database timeout update 
+screenshot           : LOCAL            : python Screenshot/_Screenshot.pyo -args " %%cmd_args%% " -quiet
+  Options: res format wnd force 
+screenshot           : ANY_REMOTE       : python Screenshot/_Screenshot.pyo -args " %%cmd_args%% " -quiet
+  Options: res format wnd force 
+st                   : LOCAL            : python st.py -args " %%cmd_args%% " -project Ops
+st                   : ANY_REMOTE       : python st.py -args " %%cmd_args%% " -project Ops
+strangeland          : LOCAL            : python strangeland.py -project StLa -args " %%cmd_args%% "
+strangeland          : ANY_REMOTE       : python strangeland.py -project StLa -args " %%cmd_args%% "
+survey               : LOCAL            : python survey.py -args " %%cmd_args%% "
+  Options: run modify sections override exclude include exclusions quiet 
+survey               : ANY_REMOTE       : python survey.py -args " %%cmd_args%% "
+  Options: run modify sections override exclude include exclusions quiet 
+tasking              : LOCAL            : python _tasking.py -args " %%cmd_args%% "
+  Options: auto verbose tasking max 
+tasking              : ANY_REMOTE       : python _tasking.py -args " %%cmd_args%% "
+  Options: auto verbose tasking max 
+trigger              : LOCAL            : script _SendCFTrigger.dss -args " %%cmd_args%% " -project Pc
+trigger              : ANY_REMOTE       : script _SendCFTrigger.dss -args " %%cmd_args%% " -project Pc
+trigger_old          : LOCAL            : script _OldTrigger.dss -args " %%cmd_args%% " -project Pc
+trigger_old          : ANY_REMOTE       : script _OldTrigger.dss -args " %%cmd_args%% " -project Pc
+unixredirect         : LOCAL            : python windows\unixredir.py -args " %%cmd_args%% "
+  Options: y i p c o r t 
+unixredirect         : ANY_REMOTE       : python windows\unixredir.py -args " %%cmd_args%% "
+  Options: y i p c o r t 
+usbmonitor           : LOCAL            : background python usbmonitor.py -args " %%cmd_args%% "
+  Options: interval 
+usbmonitor           : ANY_REMOTE       : background python usbmonitor.py -args " %%cmd_args%% "
+  Options: interval 
+usefile              : LOCAL            : lpsetenv -name _USEFILE -value %%cmd_args%%
+usefile              : ANY_REMOTE       : lpsetenv -name _USEFILE -value %%cmd_args%%
+userquery            : LOCAL            : python windows/userquery.py -project Ops -args " %%cmd_args%% "
+userquery            : ANY_REMOTE       : python windows/userquery.py -project Ops -args " %%cmd_args%% "
+utbu_install         : LOCAL            : script _UtilityBurst.dss -args "-action INSTALL  %%cmd_args%% "
+utbu_install         : ANY_REMOTE       : script _UtilityBurst.dss -args "-action INSTALL  %%cmd_args%% "
+utbu_load            : LOCAL            : script _UtilityBurst.dss -args "-action LOAD  %%cmd_args%% "
+utbu_load            : ANY_REMOTE       : script _UtilityBurst.dss -args "-action LOAD  %%cmd_args%% "
+utbu_status          : LOCAL            : script _UtilityBurst.dss -args "-action STATUS  %%cmd_args%% "
+utbu_status          : ANY_REMOTE       : script _UtilityBurst.dss -args "-action STATUS  %%cmd_args%% "
+utbu_uninstall       : LOCAL            : script _UtilityBurst.dss -args "-action UNINSTALL  %%cmd_args%% "
+utbu_uninstall       : ANY_REMOTE       : script _UtilityBurst.dss -args "-action UNINSTALL  %%cmd_args%% "
+utbu_unload          : LOCAL            : script _UtilityBurst.dss -args "-action UNLOAD  %%cmd_args%% "
+utbu_unload          : ANY_REMOTE       : script _UtilityBurst.dss -args "-action UNLOAD  %%cmd_args%% "
+utbu_verifyinstall   : LOCAL            : script _UtilityBurst.dss -args "-action VERIFYINSTALL  %%cmd_args%% "
+utbu_verifyinstall   : ANY_REMOTE       : script _UtilityBurst.dss -args "-action VERIFYINSTALL  %%cmd_args%% "
+utbu_verifyrunning   : LOCAL            : script _UtilityBurst.dss -args "-action VERIFYRUNNING  %%cmd_args%% "
+utbu_verifyrunning   : ANY_REMOTE       : script _UtilityBurst.dss -args "-action VERIFYRUNNING  %%cmd_args%% "
+utilityburst         : LOCAL            : script _UtilityBurst.dss %%cmd_args%% "
+utilityburst         : ANY_REMOTE       : script _UtilityBurst.dss %%cmd_args%% "
+vget                 : LOCAL            : python windows\vget.py -args " %%cmd_args%% " -project Ops
+  Options: vget 
+vget                 : ANY_REMOTE       : python windows\vget.py -args " %%cmd_args%% " -project Ops
+  Options: vget 
+whatsup              : LOCAL            : python whatsup.py -args " %%cmd_args%% " -project Ops
+whatsup              : ANY_REMOTE       : python whatsup.py -args " %%cmd_args%% " -project Ops
+yak                  : LOCAL            : python windows/yak.py -args " %%cmd_args%% " -project Ops
+yak                  : ANY_REMOTE       : python windows/yak.py -args " %%cmd_args%% " -project Ops
+
+    Command completed successfully
